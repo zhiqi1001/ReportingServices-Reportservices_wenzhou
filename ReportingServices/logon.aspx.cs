@@ -119,6 +119,19 @@ namespace ReportingServices
                     msg.ForeColor = System.Drawing.Color.Red;
                 }
             }
+            else if (user_ddl.SelectedItem.Value == "8")
+            {
+                if (psw.Text == "8008")
+                {
+                    Session["authority"] = "8";
+                    Response.Redirect("~/GroupRuleLogInfo_Total.aspx");
+                }
+                else
+                {
+                    msg.Text = "密码不正确";
+                    msg.ForeColor = System.Drawing.Color.Red;
+                }
+            }
         }
 
     }

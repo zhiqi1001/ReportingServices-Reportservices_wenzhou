@@ -35,3 +35,4 @@ D:\Github\ReportingServices-Reportservices_wenzhou\ReportingServices\bin\zh-Hans
 D:\Github\ReportingServices-Reportservices_wenzhou\ReportingServices\bin\zh-Hans\System.Net.Http.Formatting.resources.dll
 D:\Github\ReportingServices-Reportservices_wenzhou\ReportingServices\obj\Release\ReportingServices.dll
 D:\Github\ReportingServices-Reportservices_wenzhou\ReportingServices\obj\Release\ReportingServices.pdb
+D:\Github\ReportingServices-Reportservices_wenzhou\ReportingServices\obj\Release\ReportingServices.csprojResolveAssemblyReference.cache

@@ -34,6 +34,7 @@
             <asp:ListItem Text="脱硫运行专工" Value="5"></asp:ListItem>
             <asp:ListItem Text="环保专工" Value="6"></asp:ListItem>
             <asp:ListItem Text="仪控专工" Value="7"></asp:ListItem>
+            <asp:ListItem Text="值长" Value="8"></asp:ListItem>
         </asp:DropDownList>
     </div>
         <br /><br /><br />

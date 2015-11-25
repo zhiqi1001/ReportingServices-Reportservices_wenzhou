@@ -111,8 +111,8 @@
                 </cc1:JQGridColumn>
                 <cc1:JQGridColumn  DataField="machineid" TextAlign="Center" HeaderText="机组" DataType="Int" Width="30" Editable="false"  EditType="DropDown" EditorControlID="Machine_ddl"><%-- EditorControlID="Machine_ddl"--%>
                 </cc1:JQGridColumn>
-                <cc1:JQGridColumn  DataField="alarmlog" TextAlign="Center" HeaderText="自动分组" DataType="String" Width="70" Editable="true">
-                </cc1:JQGridColumn>
+                <%--<cc1:JQGridColumn  DataField="alarmlog" TextAlign="Center" HeaderText="自动分组" DataType="String" Width="70" Editable="true">
+                </cc1:JQGridColumn>--%>
                 <cc1:JQGridColumn  DataField="timelog" TextAlign="Center" HeaderText="发生时间" DataFormatString="{0:yyyy-MM-dd HH:mm:ss}" Width="130"  Editable="true" DataType="DateTime" EditType="DatePicker" EditorControlID="DatePicker1">
                 </cc1:JQGridColumn>
                 <cc1:JQGridColumn  DataField="timelogend" TextAlign="Center" HeaderText="结束时间" DataFormatString="{0:yyyy-MM-dd HH:mm:ss}" Width="150"  Editable="false" DataType="DateTime" Visible="false">

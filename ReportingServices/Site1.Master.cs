@@ -101,6 +101,7 @@ namespace WebApplication1
                     tvn_icemsgroup.Nodes.Add("二期集控", "terriority1", null, "~/GroupRuleLogInfo_1.aspx");
                     tvn_icemsgroup.Nodes.Add("三期集控", "terriority2", null, "~/GroupRuleLogInfo_2.aspx");
                     tvn_icemsgroup.Nodes.Add("灰硫控制室", "terriority3", null, "~/GroupRuleLogInfo_3.aspx");
+                    tvn_icemsgroup.Nodes.Add("值长审核", "GroupRuleLogInfo_Total", null, "~/GroupRuleLogInfo_Total.aspx");
                     tvn_icemsgroup.Nodes.Add("脱硝运行专工", "fieldinfoYQ_SCR", null, "~/GroupRuleLogInfo.aspx");
                     tvn_icemsgroup.Nodes.Add("脱硫运行专工", "fieldinfoYQ_FGD", null, "~/GroupRuleLogInfo_FGD.aspx");
                     tvn_icemsgroup.Nodes.Add("环保专工(环保排污核查)", "exceptioninfoYQ", null, "~/ExceptionInfo.aspx");
@@ -113,6 +114,7 @@ namespace WebApplication1
                     tvn_icemsgroup.Nodes.Add("二期集控", "terriority1", null, "~/GroupRuleLogInfo_1.aspx");
                     tvn_icemsgroup.Nodes.Add("三期集控", "terriority2", null, "~/GroupRuleLogInfo_2.aspx");
                     tvn_icemsgroup.Nodes.Add("灰硫控制室", "terriority3", null, "~/GroupRuleLogInfo_3.aspx");
+                    tvn_icemsgroup.Nodes.Add("值长审核", "GroupRuleLogInfo_Total", null, "~/GroupRuleLogInfo_Total.aspx");
                     tvn_icemsgroup.Nodes.Add("脱硝运行专工", "fieldinfoYQ_SCR", null, "~/GroupRuleLogInfo.aspx");
                     tvn_icemsgroup.Nodes.Add("脱硫运行专工", "fieldinfoYQ_FGD", null, "~/GroupRuleLogInfo_FGD.aspx");
                     tvn_icemsgroup.Nodes.Add("环保专工(环保排污核查)", "exceptioninfoYQ", null, "~/ExceptionInfo.aspx");
@@ -125,6 +127,7 @@ namespace WebApplication1
                     tvn_icemsgroup.Nodes.Add("二期集控", "terriority1", null, "~/GroupRuleLogInfo_1.aspx");
                     tvn_icemsgroup.Nodes.Add("三期集控", "terriority2", null, "~/GroupRuleLogInfo_2.aspx");
                     tvn_icemsgroup.Nodes.Add("灰硫控制室", "terriority3", null, "~/GroupRuleLogInfo_3.aspx");
+                    tvn_icemsgroup.Nodes.Add("值长审核", "GroupRuleLogInfo_Total", null, "~/GroupRuleLogInfo_Total.aspx");
                     tvn_icemsgroup.Nodes.Add("脱硝运行专工", "fieldinfoYQ_SCR", null, "~/GroupRuleLogInfo.aspx");
                     tvn_icemsgroup.Nodes.Add("脱硫运行专工", "fieldinfoYQ_FGD", null, "~/GroupRuleLogInfo_FGD.aspx");
                     tvn_icemsgroup.Nodes.Add("环保专工(环保排污核查)", "exceptioninfoYQ", null, "~/ExceptionInfo.aspx");
@@ -137,6 +140,7 @@ namespace WebApplication1
                     tvn_icemsgroup.Nodes.Add("二期集控", "terriority1", null, "~/GroupRuleLogInfo_1.aspx");
                     tvn_icemsgroup.Nodes.Add("三期集控", "terriority2", null, "~/GroupRuleLogInfo_2.aspx");
                     tvn_icemsgroup.Nodes.Add("灰硫控制室", "terriority3", null, "~/GroupRuleLogInfo_3.aspx");
+                    tvn_icemsgroup.Nodes.Add("值长审核", "GroupRuleLogInfo_Total", null, "~/GroupRuleLogInfo_Total.aspx");
                     tvn_icemsgroup.Nodes.Add("脱硝运行专工", "fieldinfoYQ_SCR", null, "~/GroupRuleLogInfo.aspx");
                     tvn_icemsgroup.Nodes.Add("脱硫运行专工", "fieldinfoYQ_FGD", null, "~/GroupRuleLogInfo_FGD.aspx");
                     tvn_icemsgroup.Nodes.Add("环保专工(环保排污核查)", "exceptioninfoYQ", null, "~/ExceptionInfo.aspx");
@@ -144,7 +148,19 @@ namespace WebApplication1
                     tvn_icemsgroup.Nodes.Add("SCR非同步原因分析", "scr_startstop_des", null, "~/scr_startstop_ab_description.aspx");
                     tvn_icemsgroup.Nodes.Add("机组启停原因分析", "machine_startstop_des", null, "~/machine_startstop_ab_description.aspx");
                 }
-                tvn_icemsgroup.Nodes.Add("值长审核", "GroupRuleLogInfo_Total", null, "~/GroupRuleLogInfo_Total.aspx");
+                if ((string)Session["authority"] == "8")
+                {
+                    tvn_icemsgroup.Nodes.Add("二期集控", "terriority1", null, "~/GroupRuleLogInfo_1.aspx");
+                    tvn_icemsgroup.Nodes.Add("三期集控", "terriority2", null, "~/GroupRuleLogInfo_2.aspx");
+                    tvn_icemsgroup.Nodes.Add("灰硫控制室", "terriority3", null, "~/GroupRuleLogInfo_3.aspx");
+                    tvn_icemsgroup.Nodes.Add("值长审核", "GroupRuleLogInfo_Total", null, "~/GroupRuleLogInfo_Total.aspx");
+                    tvn_icemsgroup.Nodes.Add("脱硝运行专工", "fieldinfoYQ_SCR", null, "~/GroupRuleLogInfo.aspx");
+                    tvn_icemsgroup.Nodes.Add("脱硫运行专工", "fieldinfoYQ_FGD", null, "~/GroupRuleLogInfo_FGD.aspx");
+                    tvn_icemsgroup.Nodes.Add("环保专工(环保排污核查)", "exceptioninfoYQ", null, "~/ExceptionInfo.aspx");
+                    tvn_icemsgroup.Nodes.Add("仪控专工(DAS/PI双重校验)", "das_piYQ", null, "~/PiDasComparisions.aspx");
+                    tvn_icemsgroup.Nodes.Add("SCR非同步原因分析", "scr_startstop_des", null, "~/scr_startstop_ab_description.aspx");
+                    tvn_icemsgroup.Nodes.Add("机组启停原因分析", "machine_startstop_des", null, "~/machine_startstop_ab_description.aspx");
+                }
 
                 tvn_minimum.Nodes.Add("超低排放PI指标日数据统计", "minimumYQ_PI", null, "~/MinimumRelease_pi.aspx");
                 tvn_minimum.Nodes.Add("超低排放PI指标月数据统计", "minimumYQ_PI_Month", null, "~/MinimumRelease_pi_month.aspx");
