@@ -144,7 +144,8 @@ namespace WebApplication1
                     tvn_icemsgroup.Nodes.Add("SCR非同步原因分析", "scr_startstop_des", null, "~/scr_startstop_ab_description.aspx");
                     tvn_icemsgroup.Nodes.Add("机组启停原因分析", "machine_startstop_des", null, "~/machine_startstop_ab_description.aspx");
                 }
-        
+                tvn_icemsgroup.Nodes.Add("值长审核", "GroupRuleLogInfo_Total", null, "~/GroupRuleLogInfo_Total.aspx");
+
                 tvn_minimum.Nodes.Add("超低排放PI指标日数据统计", "minimumYQ_PI", null, "~/MinimumRelease_pi.aspx");
                 tvn_minimum.Nodes.Add("超低排放PI指标月数据统计", "minimumYQ_PI_Month", null, "~/MinimumRelease_pi_month.aspx");
                 tvn_minimum.Nodes.Add("超低排放DAS指标统计", "minimumYQ", null, "~/MinimumRelease.aspx");

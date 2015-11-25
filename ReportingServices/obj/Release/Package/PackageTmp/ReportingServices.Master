@@ -1,0 +1,70 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="ReportingServices.master.cs" Inherits="ReportingServices.ReportingServices" %>
+
+<%@ Register Assembly="Trirand.Web" Namespace="Trirand.Web.UI.WebControls" TagPrefix="cc1" %>
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="stylesheet" type="text/css" media="screen" href="themes/jquery-ui.css"/>
+
+    <link rel="stylesheet" type="text/css" media="screen" href="Themes/ui.jqtreeview.css" />
+    <script src="script/jquery-1.11.1.js" type="text/javascript"></script>
+
+
+    <script src="js/trirand/jquery.jqDatePicker.min.js" type="text/javascript"></script>
+    <script src="js/trirand/jquery.jqMultiSelect.min.js" type="text/javascript"></script>
+    <script src="js/trirand/jquery.jqDropDownList.min.js" type="text/javascript"></script>
+    <script src="js/trirand/jquery.jqTreeView.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="easyui/themes/default/easyui.css"/>
+    <link rel="stylesheet" type="text/css" href="easyui/themes/icon.css"/>
+    <link rel="stylesheet" type="text/css" href="easyui/demo/demo.css"/>
+    <script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
+    <!--
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>   
+        -->
+</head>
+<body>
+    <div>
+        <table style="table-layout:fixed;width:100%">
+            <tr>
+                <td style="width:0px;height:100%;vertical-align:top">
+                    <div>
+                        <form>
+                        <cc1:JQTreeView runat="server" ID="JQTreeView1" Width="200" Height="300" OnNodesRequested="JQTreeView1_NodesRequested">
+                            <Nodes>
+                                <cc1:JQTreeNode Text="One" />
+                                <cc1:JQTreeNode Text="Two" Expanded="true">
+                                    <Nodes>
+                                        <cc1:JQTreeNode Text="2.1" />
+                                        <cc1:JQTreeNode Text="2.2" Expanded="true">
+                                            <Nodes>
+                                                <cc1:JQTreeNode Text="2.2.1"></cc1:JQTreeNode>
+                                                <cc1:JQTreeNode Text="2.2.2" />
+                                                <cc1:JQTreeNode Text="2.2.3" />
+                                            </Nodes>
+                                        </cc1:JQTreeNode>
+                                        <cc1:JQTreeNode Text="2.3" />
+                                    </Nodes>
+                                </cc1:JQTreeNode>
+                                <cc1:JQTreeNode Text="Three" />
+                            </Nodes>
+                        </cc1:JQTreeView>
+                        </form>
+                    </div>
+                </td>
+                <td style="width:0px">
+
+                </td>
+                <td style="width:auto">
+                    <asp:ContentPlaceHolder ID="pagecontent" runat="server">
+        
+                    </asp:ContentPlaceHolder>
+                    </td>
+                </tr>
+            </table>
+    </div>
+</body>
+</html>

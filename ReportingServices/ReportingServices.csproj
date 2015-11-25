@@ -241,6 +241,7 @@
     <None Include="Properties\PublishProfiles\ReportsWeb.pubxml" />
     <Content Include="ReportingServices.Master" />
     <Content Include="Site1.Master" />
+    <None Include="Properties\PublishProfiles\WZReportingServices.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -1,0 +1,83 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="WebApplication1.Site1" %>
+
+<%@ Register Assembly="DevExpress.Web.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.ASPxTreeView" TagPrefix="dx" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server" title="浙能温州电厂工况日志管理" style="text-align:center;font-family:'Microsoft JhengHei';font-size:small;font-weight:bold" >
+<%--    <div style="height:3px;"></div>    --%>
+        <table>
+            <tr>
+                <td><div style="width:240px;height:40px"><img  src="images/zqlogo.png"/></div></td>
+        <td><%--<div style="text-align:left;font-family:'Microsoft JhengHei';font-size:x-large;padding-left:550px;background-color:aliceblue;font-weight:bold" id="headtext" runat="server">浙能温州电厂工况日志管理</div>--%>
+            <div style="width:1100px;height:40px"><img  src="images/title.png"/></div>
+        </td>
+                </tr>
+            <%--<tr><td><div style="height:2px;background-color:blue"></div></td><td><div style="height:2px;background-color:blue"></div></td></tr>--%>
+        </table>
+    
+    <div style="height:5px;background-color:aliceblue;width:1380px"></div>
+         <div style="height:5px;padding-left:1300px;font-size:small">
+        <a href="logouthandler.ashx" id="logout">注销</a>
+             <%--<asp:Label runat="server" Text="注销" OnClick="logouthandler.ashx"></asp:Label>--%>
+     </div>
+                                 <div style="font-size:smaller;height:15px;padding-left:300px;font-style:italic;color:blue;vertical-align:top">
+                        <label id="breadcrumb"></label>
+                    </div>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <script src="script/jquery-2.1.3.min.js" type="text/javascript"></script>
+    <title>温州电厂环保信息管理</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <script type="text/javascript">
+        function hidemenu() {
+            $("#leftcol").hide();
+            $("#edge").hide();
+            $("#edge2").show();
+        }
+        function showmenu()
+        {
+            $("#leftcol").show();
+            $("#edge").show();
+            $("#edge2").hide();
+        }
+        $(document).ready(function () {
+            a = $("div.dxtv-ndSel").children("span").text();
+             $("#breadcrumb").text (a);
+        });
+    </script>
+</head>
+
+<body style="text-align:left;width:1888px;padding:0px">
+    <form runat="server">
+        <table style="height:1400px">
+            <tr>
+                <td style="width:159px;height:100%;vertical-align:top;text-align:left" id="leftcol">                   
+                    <dx:ASPxTreeView ID="ASPxTreeView1" runat="server" AllowSelectNode="True" Theme="Metropolis" OnPreRender="ASPxTreeView1_PreRender" OnNodeClick="ASPxTreeView1_NodeClick" Width="159px">
+                        </dx:ASPxTreeView>                   
+                </td>
+                <td style="width:12px;height:100%;vertical-align:top;text-align:left"></td>
+                <td style="width:6px;height:100%;background-color:aliceblue;vertical-align:middle" id="middlecol">
+                    <a href="javascript:void(0)" id="edge"><img src="Themes/images/ui-bg_flat_55_fbec88_40x100.png" width="6" height="30" onclick="javascript:hidemenu()"/></a>
+                    <a href="javascript:void(0)" id="edge2" hidden="hidden"><img src="Themes/images/ui-bg_flat_55_fbec88_40x100.png" width="6" height="30" onclick="javascript:showmenu()"/></a>
+                </td>
+                <td style="width:auto;height:100%;vertical-align:top;text-align:left;padding-left:20px;padding-top:10px">               
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </td>
+                </tr>
+            </table>
+        </form>
+
+    <div style="height:5px;background-color:aliceblue"></div>
+        <div style="height:5px;background-color:white"></div>
+    <div style="text-align:left;font-family:'Microsoft JhengHei';font-size:small;padding-left:650px">智企信息 Copyright 2015</div>
+    <div style="height:5px;"></div>
+    <%--<script type="text/javascript">
+        function getselnodetext() {
+            $("#breadcrumb").text = $("div.dxtv-ndSel").children("span").text;         
+        }
+    </script>--%>
+</body>
+</html>
