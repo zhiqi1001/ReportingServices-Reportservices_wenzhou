@@ -1,0 +1,325 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="iCEMSDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CalibPoints">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="pointname" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="plantid" Type="int" />
+    <Property Name="machine" Type="int" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“iCEMSDB.dbo.chartpointconfig”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="chartpointconfig">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="pointname" />
+      <PropertyRef Name="type" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="pointname" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="type" Type="nvarchar" MaxLength="64" Nullable="false" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“iCEMSDB.dbo.chartpointconfig_fgd_calib”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="chartpointconfig_fgd_calib">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="pointname" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="pointname" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="ud1" Type="nvarchar" MaxLength="64" />
+    <Property Name="ud2" Type="nvarchar" MaxLength="64" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“iCEMSDB.dbo.chartpointconfig_fgd_launch”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="chartpointconfig_fgd_launch">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="pointname" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="pointname" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="ud1" Type="nvarchar" MaxLength="64" />
+    <Property Name="ud2" Type="nvarchar" MaxLength="64" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“iCEMSDB.dbo.chartpointconfig_fgd_scon”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="chartpointconfig_fgd_scon">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="pointname" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="pointname" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="ud1" Type="nvarchar" MaxLength="64" />
+    <Property Name="ud2" Type="nvarchar" MaxLength="64" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“iCEMSDB.dbo.chartpointconfig_scr_calib”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="chartpointconfig_scr_calib">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="pointname" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="pointname" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="ud1" Type="nvarchar" MaxLength="64" />
+    <Property Name="ud2" Type="nvarchar" MaxLength="64" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“iCEMSDB.dbo.chartpointconfig_scr_launch”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="chartpointconfig_scr_launch">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="pointname" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="pointname" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="ud1" Type="nvarchar" MaxLength="64" />
+    <Property Name="ud2" Type="nvarchar" MaxLength="64" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“iCEMSDB.dbo.chartpointconfig_scr_scon”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="chartpointconfig_scr_scon">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="pointname" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="pointname" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="ud1" Type="nvarchar" MaxLength="64" />
+    <Property Name="ud2" Type="nvarchar" MaxLength="64" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“iCEMSDB.dbo.EnvirIndicator”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="EnvirIndicator">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="indicatorname" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="indicatorname" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="sequence" Type="smallint" />
+    <Property Name="unit" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“iCEMSDB.dbo.Indicator_loadpercentage”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="Indicator_loadpercentage">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="indicatorid" Type="int" />
+    <Property Name="loadpercentage" Type="float" />
+    <Property Name="warninglimit" Type="float" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“iCEMSDB.dbo.MachineCemsInfo”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="MachineCemsInfo">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="machineid" Type="int" />
+    <Property Name="machinename" Type="nvarchar" MaxLength="128" />
+    <Property Name="plantid" Type="int" />
+    <Property Name="globalmachineid" Type="int" />
+    <Property Name="cemstime" Type="datetime" />
+    <Property Name="importedtime" Type="datetime" />
+    <Property Name="updatetime" Type="datetime" />
+    <Property Name="designedload" Type="int" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“iCEMSDB.dbo.MachineShiftSecs”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="MachineShiftSecs">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="machineid" Type="int" />
+    <Property Name="shiftsecs" Type="int" />
+  </EntityType>
+  <EntityType Name="PlantCemsInfo">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="plantid" Type="int" Nullable="false" />
+    <Property Name="plantname" Type="nvarchar" MaxLength="128" />
+    <Property Name="totalmachines" Type="int" />
+    <Property Name="cemsmachines" Type="int" />
+    <Property Name="importedmachines" Type="int" />
+    <Property Name="updatetime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“iCEMSDB.dbo.Point_Machine_Map”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="Point_Machine_Map">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="pointname" />
+      <PropertyRef Name="machineid" />
+      <PropertyRef Name="enabled" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="pointname" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="machineid" Type="int" Nullable="false" />
+    <Property Name="enabled" Type="int" Nullable="false" />
+    <Property Name="description" Type="nvarchar" MaxLength="256" />
+    <Property Name="minimun_order" Type="int" />
+    <Property Name="startstop" Type="int" />
+    <Property Name="scr" Type="int" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“iCEMSDB.dbo.RelevantPoints”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="RelevantPoints">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="pointname" Type="nvarchar" MaxLength="128" />
+    <Property Name="pointtype" Type="nvarchar" MaxLength="16" />
+    <Property Name="plantid" Type="int" />
+    <Property Name="machineid" Type="int" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“iCEMSDB.dbo.Rule_Machine_Map”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="Rule_Machine_Map">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="rulename" />
+      <PropertyRef Name="machineid" />
+      <PropertyRef Name="enabled" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="rulename" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="machineid" Type="int" Nullable="false" />
+    <Property Name="enabled" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="iCEMSDBModelStoreContainer">
+    <EntitySet Name="CalibPoints" EntityType="Self.CalibPoints" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PlantCemsInfo" EntityType="Self.PlantCemsInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="chartpointconfig" EntityType="Self.chartpointconfig" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [chartpointconfig].[id] AS [id], 
+    [chartpointconfig].[pointname] AS [pointname], 
+    [chartpointconfig].[type] AS [type]
+    FROM [dbo].[chartpointconfig] AS [chartpointconfig]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="chartpointconfig_fgd_calib" EntityType="Self.chartpointconfig_fgd_calib" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [chartpointconfig_fgd_calib].[id] AS [id], 
+    [chartpointconfig_fgd_calib].[pointname] AS [pointname], 
+    [chartpointconfig_fgd_calib].[ud1] AS [ud1], 
+    [chartpointconfig_fgd_calib].[ud2] AS [ud2]
+    FROM [dbo].[chartpointconfig_fgd_calib] AS [chartpointconfig_fgd_calib]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="chartpointconfig_fgd_launch" EntityType="Self.chartpointconfig_fgd_launch" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [chartpointconfig_fgd_launch].[id] AS [id], 
+    [chartpointconfig_fgd_launch].[pointname] AS [pointname], 
+    [chartpointconfig_fgd_launch].[ud1] AS [ud1], 
+    [chartpointconfig_fgd_launch].[ud2] AS [ud2]
+    FROM [dbo].[chartpointconfig_fgd_launch] AS [chartpointconfig_fgd_launch]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="chartpointconfig_fgd_scon" EntityType="Self.chartpointconfig_fgd_scon" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [chartpointconfig_fgd_scon].[id] AS [id], 
+    [chartpointconfig_fgd_scon].[pointname] AS [pointname], 
+    [chartpointconfig_fgd_scon].[ud1] AS [ud1], 
+    [chartpointconfig_fgd_scon].[ud2] AS [ud2]
+    FROM [dbo].[chartpointconfig_fgd_scon] AS [chartpointconfig_fgd_scon]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="chartpointconfig_scr_calib" EntityType="Self.chartpointconfig_scr_calib" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [chartpointconfig_scr_calib].[id] AS [id], 
+    [chartpointconfig_scr_calib].[pointname] AS [pointname], 
+    [chartpointconfig_scr_calib].[ud1] AS [ud1], 
+    [chartpointconfig_scr_calib].[ud2] AS [ud2]
+    FROM [dbo].[chartpointconfig_scr_calib] AS [chartpointconfig_scr_calib]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="chartpointconfig_scr_launch" EntityType="Self.chartpointconfig_scr_launch" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [chartpointconfig_scr_launch].[id] AS [id], 
+    [chartpointconfig_scr_launch].[pointname] AS [pointname], 
+    [chartpointconfig_scr_launch].[ud1] AS [ud1], 
+    [chartpointconfig_scr_launch].[ud2] AS [ud2]
+    FROM [dbo].[chartpointconfig_scr_launch] AS [chartpointconfig_scr_launch]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="chartpointconfig_scr_scon" EntityType="Self.chartpointconfig_scr_scon" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [chartpointconfig_scr_scon].[id] AS [id], 
+    [chartpointconfig_scr_scon].[pointname] AS [pointname], 
+    [chartpointconfig_scr_scon].[ud1] AS [ud1], 
+    [chartpointconfig_scr_scon].[ud2] AS [ud2]
+    FROM [dbo].[chartpointconfig_scr_scon] AS [chartpointconfig_scr_scon]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="EnvirIndicator" EntityType="Self.EnvirIndicator" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [EnvirIndicator].[id] AS [id], 
+    [EnvirIndicator].[indicatorname] AS [indicatorname], 
+    [EnvirIndicator].[sequence] AS [sequence], 
+    [EnvirIndicator].[unit] AS [unit]
+    FROM [dbo].[EnvirIndicator] AS [EnvirIndicator]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Indicator_loadpercentage" EntityType="Self.Indicator_loadpercentage" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Indicator_loadpercentage].[id] AS [id], 
+    [Indicator_loadpercentage].[indicatorid] AS [indicatorid], 
+    [Indicator_loadpercentage].[loadpercentage] AS [loadpercentage], 
+    [Indicator_loadpercentage].[warninglimit] AS [warninglimit]
+    FROM [dbo].[Indicator_loadpercentage] AS [Indicator_loadpercentage]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="MachineCemsInfo" EntityType="Self.MachineCemsInfo" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [MachineCemsInfo].[id] AS [id], 
+    [MachineCemsInfo].[machineid] AS [machineid], 
+    [MachineCemsInfo].[machinename] AS [machinename], 
+    [MachineCemsInfo].[plantid] AS [plantid], 
+    [MachineCemsInfo].[globalmachineid] AS [globalmachineid], 
+    [MachineCemsInfo].[cemstime] AS [cemstime], 
+    [MachineCemsInfo].[importedtime] AS [importedtime], 
+    [MachineCemsInfo].[updatetime] AS [updatetime], 
+    [MachineCemsInfo].[designedload] AS [designedload]
+    FROM [dbo].[MachineCemsInfo] AS [MachineCemsInfo]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="MachineShiftSecs" EntityType="Self.MachineShiftSecs" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [MachineShiftSecs].[id] AS [id], 
+    [MachineShiftSecs].[machineid] AS [machineid], 
+    [MachineShiftSecs].[shiftsecs] AS [shiftsecs]
+    FROM [dbo].[MachineShiftSecs] AS [MachineShiftSecs]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Point_Machine_Map" EntityType="Self.Point_Machine_Map" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Point_Machine_Map].[id] AS [id], 
+    [Point_Machine_Map].[pointname] AS [pointname], 
+    [Point_Machine_Map].[machineid] AS [machineid], 
+    [Point_Machine_Map].[enabled] AS [enabled], 
+    [Point_Machine_Map].[description] AS [description], 
+    [Point_Machine_Map].[minimun_order] AS [minimun_order], 
+    [Point_Machine_Map].[startstop] AS [startstop], 
+    [Point_Machine_Map].[scr] AS [scr]
+    FROM [dbo].[Point_Machine_Map] AS [Point_Machine_Map]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="RelevantPoints" EntityType="Self.RelevantPoints" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [RelevantPoints].[id] AS [id], 
+    [RelevantPoints].[pointname] AS [pointname], 
+    [RelevantPoints].[pointtype] AS [pointtype], 
+    [RelevantPoints].[plantid] AS [plantid], 
+    [RelevantPoints].[machineid] AS [machineid]
+    FROM [dbo].[RelevantPoints] AS [RelevantPoints]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Rule_Machine_Map" EntityType="Self.Rule_Machine_Map" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Rule_Machine_Map].[id] AS [id], 
+    [Rule_Machine_Map].[rulename] AS [rulename], 
+    [Rule_Machine_Map].[machineid] AS [machineid], 
+    [Rule_Machine_Map].[enabled] AS [enabled]
+    FROM [dbo].[Rule_Machine_Map] AS [Rule_Machine_Map]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

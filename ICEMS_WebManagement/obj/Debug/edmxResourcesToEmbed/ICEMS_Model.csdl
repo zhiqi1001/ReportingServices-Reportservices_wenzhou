@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="iCEMSDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="chartpointconfig">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="pointname" />
+      <PropertyRef Name="type" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="pointname" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="type" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="chartpointconfig_fgd_calib">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="pointname" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="pointname" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ud1" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Name="ud2" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="chartpointconfig_fgd_launch">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="pointname" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="pointname" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ud1" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Name="ud2" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="chartpointconfig_fgd_scon">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="pointname" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="pointname" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ud1" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Name="ud2" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="chartpointconfig_scr_calib">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="pointname" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="pointname" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ud1" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Name="ud2" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="chartpointconfig_scr_launch">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="pointname" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="pointname" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ud1" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Name="ud2" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="chartpointconfig_scr_scon">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="pointname" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="pointname" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ud1" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Name="ud2" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="EnvirIndicator">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="indicatorname" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="indicatorname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="sequence" Type="Int16" />
+    <Property Name="unit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Indicator_loadpercentage">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="indicatorid" Type="Int32" />
+    <Property Name="loadpercentage" Type="Double" />
+    <Property Name="warninglimit" Type="Double" />
+  </EntityType>
+  <EntityType Name="MachineCemsInfo">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="machineid" Type="Int32" />
+    <Property Name="machinename" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="plantid" Type="Int32" />
+    <Property Name="globalmachineid" Type="Int32" />
+    <Property Name="cemstime" Type="DateTime" Precision="3" />
+    <Property Name="importedtime" Type="DateTime" Precision="3" />
+    <Property Name="updatetime" Type="DateTime" Precision="3" />
+    <Property Name="designedload" Type="Int32" />
+  </EntityType>
+  <EntityType Name="MachineShiftSecs">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="machineid" Type="Int32" />
+    <Property Name="shiftsecs" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Point_Machine_Map">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="pointname" />
+      <PropertyRef Name="machineid" />
+      <PropertyRef Name="enabled" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="pointname" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="machineid" Type="Int32" Nullable="false" />
+    <Property Name="enabled" Type="Int32" Nullable="false" />
+    <Property Name="description" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="minimun_order" Type="Int32" />
+    <Property Name="startstop" Type="Int32" />
+    <Property Name="scr" Type="Int32" />
+  </EntityType>
+  <EntityType Name="RelevantPoints">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="pointname" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="pointtype" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+    <Property Name="plantid" Type="Int32" />
+    <Property Name="machineid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Rule_Machine_Map">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="rulename" />
+      <PropertyRef Name="machineid" />
+      <PropertyRef Name="enabled" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="rulename" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="machineid" Type="Int32" Nullable="false" />
+    <Property Name="enabled" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="iCEMSDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="chartpointconfig" EntityType="Self.chartpointconfig" />
+    <EntitySet Name="chartpointconfig_fgd_calib" EntityType="Self.chartpointconfig_fgd_calib" />
+    <EntitySet Name="chartpointconfig_fgd_launch" EntityType="Self.chartpointconfig_fgd_launch" />
+    <EntitySet Name="chartpointconfig_fgd_scon" EntityType="Self.chartpointconfig_fgd_scon" />
+    <EntitySet Name="chartpointconfig_scr_calib" EntityType="Self.chartpointconfig_scr_calib" />
+    <EntitySet Name="chartpointconfig_scr_launch" EntityType="Self.chartpointconfig_scr_launch" />
+    <EntitySet Name="chartpointconfig_scr_scon" EntityType="Self.chartpointconfig_scr_scon" />
+    <EntitySet Name="EnvirIndicator" EntityType="Self.EnvirIndicator" />
+    <EntitySet Name="Indicator_loadpercentage" EntityType="Self.Indicator_loadpercentage" />
+    <EntitySet Name="MachineCemsInfo" EntityType="Self.MachineCemsInfo" />
+    <EntitySet Name="MachineShiftSecs" EntityType="Self.MachineShiftSecs" />
+    <EntitySet Name="Point_Machine_Map" EntityType="Self.Point_Machine_Map" />
+    <EntitySet Name="RelevantPoints" EntityType="Self.RelevantPoints" />
+    <EntitySet Name="Rule_Machine_Map" EntityType="Self.Rule_Machine_Map" />
+    <EntitySet Name="CalibPoints" EntityType="iCEMSDBModel.CalibPoints" />
+    <EntitySet Name="PlantCemsInfo" EntityType="iCEMSDBModel.PlantCemsInfo" />
+  </EntityContainer>
+  <EntityType Name="CalibPoints">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="pointname" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="plantid" Type="Int32" />
+    <Property Name="machine" Type="Int32" />
+  </EntityType>
+  <EntityType Name="PlantCemsInfo">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="plantid" Type="Int32" Nullable="false" />
+    <Property Name="plantname" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="totalmachines" Type="Int32" />
+    <Property Name="cemsmachines" Type="Int32" />
+    <Property Name="importedmachines" Type="Int32" />
+    <Property Name="updatetime" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+</Schema>

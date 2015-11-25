@@ -1,0 +1,4 @@
+C:\Users\zhefeng\Documents\Projects\ZHIQI\YueQing\ReportingServices\SQL\bin\Debug\SQL.dll
+C:\Users\zhefeng\Documents\Projects\ZHIQI\YueQing\ReportingServices\SQL\bin\Debug\SQL.pdb
+C:\Users\zhefeng\Documents\Projects\ZHIQI\YueQing\ReportingServices\SQL\obj\Debug\SQL.dll
+C:\Users\zhefeng\Documents\Projects\ZHIQI\YueQing\ReportingServices\SQL\obj\Debug\SQL.pdb

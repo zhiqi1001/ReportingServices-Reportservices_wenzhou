@@ -1,0 +1,451 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="iCEMSDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CalibPoints">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="pointname" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="plantid" Type="int" />
+    <Property Name="machine" Type="int" />
+  </EntityType>
+  <EntityType Name="CalibRecords">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="pointid" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="starttime" Type="datetime" />
+    <Property Name="endtime" Type="datetime" />
+    <Property Name="updatetime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="CalibRuleValue">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="timestamps" Type="datetime" />
+    <Property Name="pname" Type="nvarchar" MaxLength="128" />
+    <Property Name="pvalue" Type="float" />
+    <Property Name="machineid" Type="int" />
+    <Property Name="plantid" Type="int" />
+    <Property Name="actualminutes" Type="int" />
+    <Property Name="updatetime" Type="datetime" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“iCEMSDB.dbo.CEMSRuleLogRecords”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="CEMSRuleLogRecords">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="timestamps" />
+      <PropertyRef Name="updatetime" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="pname" Type="nvarchar" MaxLength="128" />
+    <Property Name="timestamps" Type="datetime" Nullable="false" />
+    <Property Name="rname" Type="nvarchar" MaxLength="128" />
+    <Property Name="ruletype" Type="nvarchar" MaxLength="64" />
+    <Property Name="rulediscrip" Type="nvarchar" MaxLength="256" />
+    <Property Name="updatetime" Type="datetime" Nullable="false" />
+    <Property Name="machineid" Type="int" />
+    <Property Name="plantid" Type="int" />
+  </EntityType>
+  <EntityType Name="chartpointconfig">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="pointname" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="type" Type="nvarchar" MaxLength="64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="chartpointconfig_fgd_calib">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="pointname" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="ud1" Type="nvarchar" MaxLength="64" />
+    <Property Name="ud2" Type="nvarchar" MaxLength="64" />
+  </EntityType>
+  <EntityType Name="chartpointconfig_fgd_launch">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="pointname" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="ud1" Type="nvarchar" MaxLength="64" />
+    <Property Name="ud2" Type="nvarchar" MaxLength="64" />
+  </EntityType>
+  <EntityType Name="chartpointconfig_fgd_scon">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="pointname" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="ud1" Type="nvarchar" MaxLength="64" />
+    <Property Name="ud2" Type="nvarchar" MaxLength="64" />
+  </EntityType>
+  <EntityType Name="chartpointconfig_scr_calib">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="pointname" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="ud1" Type="nvarchar" MaxLength="64" />
+    <Property Name="ud2" Type="nvarchar" MaxLength="64" />
+  </EntityType>
+  <EntityType Name="chartpointconfig_scr_launch">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="pointname" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="ud1" Type="nvarchar" MaxLength="64" />
+    <Property Name="ud2" Type="nvarchar" MaxLength="64" />
+  </EntityType>
+  <EntityType Name="chartpointconfig_scr_scon">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="pointname" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="ud1" Type="nvarchar" MaxLength="64" />
+    <Property Name="ud2" Type="nvarchar" MaxLength="64" />
+  </EntityType>
+  <EntityType Name="envirexception_rulelog_match">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="envir_id" Type="bigint" Nullable="false" />
+    <Property Name="rule_id" Type="bigint" Nullable="false" />
+    <Property Name="typeid" Type="int" Nullable="false" />
+    <Property Name="isshowed" Type="bit" Nullable="false" />
+    <Property Name="createtime" Type="datetime" />
+    <Property Name="updatetime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="EnvirIndicator">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="indicatorname" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="sequence" Type="smallint" />
+    <Property Name="unit" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="EnvirMonitorData">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="enterprise" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="pointname" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="timestamps" Type="datetime" Nullable="false" />
+    <Property Name="indicatorid" Type="smallint" Nullable="false" />
+    <Property Name="indicatorvalue" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Exception_DayConfirm">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="timestamps" Type="date" Nullable="false" />
+    <Property Name="confirmed" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Exception_Group">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="groupname" Type="varchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="exceptiondata_group">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="envir_id" Type="bigint" Nullable="false" />
+    <Property Name="typeid" Type="int" Nullable="false" />
+    <Property Name="typecontent" Type="nvarchar" MaxLength="256" />
+    <Property Name="mconfirm" Type="bit" Nullable="false" />
+    <Property Name="createdate" Type="datetime" />
+    <Property Name="updatedate" Type="datetime" />
+    <Property Name="locked" Type="int" />
+  </EntityType>
+  <EntityType Name="GroupRuleResult">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="pointname" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="rulename" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="grouptype" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="groupsubtype" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="timestamps" Type="datetime" Nullable="false" />
+    <Property Name="timestamps2" Type="datetime" />
+    <Property Name="description" Type="nvarchar" MaxLength="512" />
+    <Property Name="updatetime" Type="datetime" Nullable="false" />
+    <Property Name="cemstype" Type="nvarchar" MaxLength="64" />
+  </EntityType>
+  <EntityType Name="GroupRuleStatus">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="statusname" Type="nvarchar" MaxLength="128" />
+  </EntityType>
+  <EntityType Name="Indicator_loadpercentage">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="indicatorid" Type="int" />
+    <Property Name="loadpercentage" Type="float" />
+    <Property Name="warninglimit" Type="float" />
+  </EntityType>
+  <EntityType Name="LogicRuleAlarmResult">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="pointname" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="rulename" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="timestamps" Type="datetime" Nullable="false" />
+    <Property Name="description" Type="varchar" MaxLength="512" />
+    <Property Name="type" Type="nvarchar" MaxLength="32" Nullable="false" />
+    <Property Name="subtype" Type="nvarchar" MaxLength="32" />
+    <Property Name="updatetime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MachineCemsInfo">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="machineid" Type="int" />
+    <Property Name="machinename" Type="nvarchar" MaxLength="128" />
+    <Property Name="plantid" Type="int" />
+    <Property Name="globalmachineid" Type="int" />
+    <Property Name="cemstime" Type="datetime" />
+    <Property Name="importedtime" Type="datetime" />
+    <Property Name="updatetime" Type="datetime" />
+    <Property Name="designedload" Type="int" />
+  </EntityType>
+  <EntityType Name="MachineShiftSecs">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="machineid" Type="int" />
+    <Property Name="shiftsecs" Type="int" />
+  </EntityType>
+  <EntityType Name="moduletypes">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="modules" Type="nvarchar" MaxLength="64" Nullable="false" />
+    <Property Name="orders" Type="int" />
+  </EntityType>
+  <EntityType Name="MonthConfig">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="monthid" Type="int" Nullable="false" />
+    <Property Name="monthname" Type="nvarchar" MaxLength="32" />
+  </EntityType>
+  <EntityType Name="PIAvgRecords">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="pname" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="pvalue" Type="float" Nullable="false" />
+    <Property Name="timestamps" Type="datetime" Nullable="false" />
+    <Property Name="updatetime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PIHourAvgPoints">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="pointname" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="shiftsecs" Type="float" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“iCEMSDB.dbo.PlantCemsInfo”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="PlantCemsInfo">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="plantid" />
+      <PropertyRef Name="updatetime" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="plantid" Type="int" Nullable="false" />
+    <Property Name="plantname" Type="nvarchar" MaxLength="128" />
+    <Property Name="totalmachines" Type="int" />
+    <Property Name="cemsmachines" Type="int" />
+    <Property Name="importedmachines" Type="int" />
+    <Property Name="updatetime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Point_Machine_Map">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="pointname" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="machineid" Type="int" Nullable="false" />
+    <Property Name="enabled" Type="int" Nullable="false" />
+    <Property Name="description" Type="nvarchar" MaxLength="256" />
+    <Property Name="minimun_order" Type="int" />
+    <Property Name="startstop" Type="int" />
+    <Property Name="scr" Type="int" />
+  </EntityType>
+  <EntityType Name="RelevantPoints">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="pointname" Type="nvarchar" MaxLength="128" />
+    <Property Name="pointtype" Type="nvarchar" MaxLength="16" />
+    <Property Name="plantid" Type="int" />
+    <Property Name="machineid" Type="int" />
+  </EntityType>
+  <EntityType Name="reportinfo">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="reportname" Type="nvarchar" MaxLength="64" Nullable="false" />
+    <Property Name="moduleid" Type="int" Nullable="false" />
+    <Property Name="typeid" Type="int" Nullable="false" />
+    <Property Name="isshowed" Type="bit" Nullable="false" />
+    <Property Name="isdrillable" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="reportrelations">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="sourceid" Type="int" Nullable="false" />
+    <Property Name="destinationid" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ReportTypes">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="types" Type="nvarchar" MaxLength="16" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Rule_Machine_Map">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="rulename" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="machineid" Type="int" Nullable="false" />
+    <Property Name="enabled" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="StatisticMetaGroup">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="statisticgroup" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="seq" Type="int" />
+  </EntityType>
+  <EntityType Name="SupervisedIndicator">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="indicatorid" Type="int" Nullable="false" />
+    <Property Name="indicatorname" Type="nvarchar" MaxLength="128" />
+    <Property Name="seq2" Type="int" />
+  </EntityType>
+  <EntityType Name="t_RulelogS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RuleName" Type="nvarchar" MaxLength="255" />
+    <Property Name="AlarmLog" Type="nvarchar" MaxLength="255" />
+    <Property Name="TimeLog" Type="datetime" />
+    <Property Name="ShowType" Type="nvarchar" MaxLength="50" />
+    <Property Name="AlarmDis" Type="nvarchar" MaxLength="500" />
+    <Property Name="Color" Type="nvarchar" MaxLength="50" />
+    <Property Name="TimeLogEnd" Type="datetime" />
+    <Property Name="FromXLS" Type="int" />
+    <Property Name="EditUser" Type="nvarchar" MaxLength="50" />
+    <Property Name="EditTime" Type="datetime" />
+    <Property Name="CEMStype" Type="nvarchar" MaxLength="50" />
+    <Property Name="ValidatedGroup" Type="nvarchar" MaxLength="128" />
+    <Property Name="ConfirmedGroup" Type="nvarchar" MaxLength="128" />
+    <Property Name="GroupStatus" Type="int" />
+    <Property Name="ConfirmedUser" Type="nvarchar" MaxLength="128" />
+    <Property Name="ConfirmedTime" Type="datetime" />
+    <Property Name="ValidatedUser" Type="nvarchar" MaxLength="128" />
+    <Property Name="ValidatedTime" Type="datetime" />
+  </EntityType>
+  <EntityContainer Name="iCEMSDBModelStoreContainer">
+    <EntitySet Name="CalibPoints" EntityType="Self.CalibPoints" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CalibRecords" EntityType="Self.CalibRecords" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CalibRuleValue" EntityType="Self.CalibRuleValue" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="chartpointconfig" EntityType="Self.chartpointconfig" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="chartpointconfig_fgd_calib" EntityType="Self.chartpointconfig_fgd_calib" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="chartpointconfig_fgd_launch" EntityType="Self.chartpointconfig_fgd_launch" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="chartpointconfig_fgd_scon" EntityType="Self.chartpointconfig_fgd_scon" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="chartpointconfig_scr_calib" EntityType="Self.chartpointconfig_scr_calib" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="chartpointconfig_scr_launch" EntityType="Self.chartpointconfig_scr_launch" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="chartpointconfig_scr_scon" EntityType="Self.chartpointconfig_scr_scon" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="envirexception_rulelog_match" EntityType="Self.envirexception_rulelog_match" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EnvirIndicator" EntityType="Self.EnvirIndicator" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EnvirMonitorData" EntityType="Self.EnvirMonitorData" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Exception_DayConfirm" EntityType="Self.Exception_DayConfirm" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Exception_Group" EntityType="Self.Exception_Group" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="exceptiondata_group" EntityType="Self.exceptiondata_group" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GroupRuleResult" EntityType="Self.GroupRuleResult" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GroupRuleStatus" EntityType="Self.GroupRuleStatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Indicator_loadpercentage" EntityType="Self.Indicator_loadpercentage" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LogicRuleAlarmResult" EntityType="Self.LogicRuleAlarmResult" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MachineCemsInfo" EntityType="Self.MachineCemsInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MachineShiftSecs" EntityType="Self.MachineShiftSecs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="moduletypes" EntityType="Self.moduletypes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MonthConfig" EntityType="Self.MonthConfig" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PIAvgRecords" EntityType="Self.PIAvgRecords" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PIHourAvgPoints" EntityType="Self.PIHourAvgPoints" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Point_Machine_Map" EntityType="Self.Point_Machine_Map" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RelevantPoints" EntityType="Self.RelevantPoints" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="reportinfo" EntityType="Self.reportinfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="reportrelations" EntityType="Self.reportrelations" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ReportTypes" EntityType="Self.ReportTypes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Rule_Machine_Map" EntityType="Self.Rule_Machine_Map" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StatisticMetaGroup" EntityType="Self.StatisticMetaGroup" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SupervisedIndicator" EntityType="Self.SupervisedIndicator" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_RulelogS" EntityType="Self.t_RulelogS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CEMSRuleLogRecords" EntityType="Self.CEMSRuleLogRecords" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [CEMSRuleLogRecords].[id] AS [id], 
+    [CEMSRuleLogRecords].[pname] AS [pname], 
+    [CEMSRuleLogRecords].[timestamps] AS [timestamps], 
+    [CEMSRuleLogRecords].[rname] AS [rname], 
+    [CEMSRuleLogRecords].[ruletype] AS [ruletype], 
+    [CEMSRuleLogRecords].[rulediscrip] AS [rulediscrip], 
+    [CEMSRuleLogRecords].[updatetime] AS [updatetime], 
+    [CEMSRuleLogRecords].[machineid] AS [machineid], 
+    [CEMSRuleLogRecords].[plantid] AS [plantid]
+    FROM [dbo].[CEMSRuleLogRecords] AS [CEMSRuleLogRecords]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="PlantCemsInfo" EntityType="Self.PlantCemsInfo" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [PlantCemsInfo].[id] AS [id], 
+    [PlantCemsInfo].[plantid] AS [plantid], 
+    [PlantCemsInfo].[plantname] AS [plantname], 
+    [PlantCemsInfo].[totalmachines] AS [totalmachines], 
+    [PlantCemsInfo].[cemsmachines] AS [cemsmachines], 
+    [PlantCemsInfo].[importedmachines] AS [importedmachines], 
+    [PlantCemsInfo].[updatetime] AS [updatetime]
+    FROM [dbo].[PlantCemsInfo] AS [PlantCemsInfo]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

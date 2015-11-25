@@ -1,0 +1,421 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="iCEMSDBModelStoreContainer" CdmEntityContainer="iCEMSDBEntities">
+    <EntitySetMapping Name="CalibPoints">
+      <EntityTypeMapping TypeName="iCEMSDBModel.CalibPoints">
+        <MappingFragment StoreEntitySet="CalibPoints">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="pointname" ColumnName="pointname" />
+          <ScalarProperty Name="plantid" ColumnName="plantid" />
+          <ScalarProperty Name="machine" ColumnName="machine" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CalibRecords">
+      <EntityTypeMapping TypeName="iCEMSDBModel.CalibRecords">
+        <MappingFragment StoreEntitySet="CalibRecords">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="pointid" ColumnName="pointid" />
+          <ScalarProperty Name="starttime" ColumnName="starttime" />
+          <ScalarProperty Name="endtime" ColumnName="endtime" />
+          <ScalarProperty Name="updatetime" ColumnName="updatetime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CalibRuleValue">
+      <EntityTypeMapping TypeName="iCEMSDBModel.CalibRuleValue">
+        <MappingFragment StoreEntitySet="CalibRuleValue">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="timestamps" ColumnName="timestamps" />
+          <ScalarProperty Name="pname" ColumnName="pname" />
+          <ScalarProperty Name="pvalue" ColumnName="pvalue" />
+          <ScalarProperty Name="machineid" ColumnName="machineid" />
+          <ScalarProperty Name="plantid" ColumnName="plantid" />
+          <ScalarProperty Name="actualminutes" ColumnName="actualminutes" />
+          <ScalarProperty Name="updatetime" ColumnName="updatetime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="chartpointconfig">
+      <EntityTypeMapping TypeName="iCEMSDBModel.chartpointconfig">
+        <MappingFragment StoreEntitySet="chartpointconfig">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="pointname" ColumnName="pointname" />
+          <ScalarProperty Name="type" ColumnName="type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="chartpointconfig_fgd_calib">
+      <EntityTypeMapping TypeName="iCEMSDBModel.chartpointconfig_fgd_calib">
+        <MappingFragment StoreEntitySet="chartpointconfig_fgd_calib">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="pointname" ColumnName="pointname" />
+          <ScalarProperty Name="ud1" ColumnName="ud1" />
+          <ScalarProperty Name="ud2" ColumnName="ud2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="chartpointconfig_fgd_launch">
+      <EntityTypeMapping TypeName="iCEMSDBModel.chartpointconfig_fgd_launch">
+        <MappingFragment StoreEntitySet="chartpointconfig_fgd_launch">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="pointname" ColumnName="pointname" />
+          <ScalarProperty Name="ud1" ColumnName="ud1" />
+          <ScalarProperty Name="ud2" ColumnName="ud2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="chartpointconfig_fgd_scon">
+      <EntityTypeMapping TypeName="iCEMSDBModel.chartpointconfig_fgd_scon">
+        <MappingFragment StoreEntitySet="chartpointconfig_fgd_scon">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="pointname" ColumnName="pointname" />
+          <ScalarProperty Name="ud1" ColumnName="ud1" />
+          <ScalarProperty Name="ud2" ColumnName="ud2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="chartpointconfig_scr_calib">
+      <EntityTypeMapping TypeName="iCEMSDBModel.chartpointconfig_scr_calib">
+        <MappingFragment StoreEntitySet="chartpointconfig_scr_calib">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="pointname" ColumnName="pointname" />
+          <ScalarProperty Name="ud1" ColumnName="ud1" />
+          <ScalarProperty Name="ud2" ColumnName="ud2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="chartpointconfig_scr_launch">
+      <EntityTypeMapping TypeName="iCEMSDBModel.chartpointconfig_scr_launch">
+        <MappingFragment StoreEntitySet="chartpointconfig_scr_launch">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="pointname" ColumnName="pointname" />
+          <ScalarProperty Name="ud1" ColumnName="ud1" />
+          <ScalarProperty Name="ud2" ColumnName="ud2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="chartpointconfig_scr_scon">
+      <EntityTypeMapping TypeName="iCEMSDBModel.chartpointconfig_scr_scon">
+        <MappingFragment StoreEntitySet="chartpointconfig_scr_scon">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="pointname" ColumnName="pointname" />
+          <ScalarProperty Name="ud1" ColumnName="ud1" />
+          <ScalarProperty Name="ud2" ColumnName="ud2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="envirexception_rulelog_match">
+      <EntityTypeMapping TypeName="iCEMSDBModel.envirexception_rulelog_match">
+        <MappingFragment StoreEntitySet="envirexception_rulelog_match">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="envir_id" ColumnName="envir_id" />
+          <ScalarProperty Name="rule_id" ColumnName="rule_id" />
+          <ScalarProperty Name="typeid" ColumnName="typeid" />
+          <ScalarProperty Name="isshowed" ColumnName="isshowed" />
+          <ScalarProperty Name="createtime" ColumnName="createtime" />
+          <ScalarProperty Name="updatetime" ColumnName="updatetime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EnvirIndicator">
+      <EntityTypeMapping TypeName="iCEMSDBModel.EnvirIndicator">
+        <MappingFragment StoreEntitySet="EnvirIndicator">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="indicatorname" ColumnName="indicatorname" />
+          <ScalarProperty Name="sequence" ColumnName="sequence" />
+          <ScalarProperty Name="unit" ColumnName="unit" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EnvirMonitorData">
+      <EntityTypeMapping TypeName="iCEMSDBModel.EnvirMonitorData">
+        <MappingFragment StoreEntitySet="EnvirMonitorData">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="enterprise" ColumnName="enterprise" />
+          <ScalarProperty Name="pointname" ColumnName="pointname" />
+          <ScalarProperty Name="timestamps" ColumnName="timestamps" />
+          <ScalarProperty Name="indicatorid" ColumnName="indicatorid" />
+          <ScalarProperty Name="indicatorvalue" ColumnName="indicatorvalue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Exception_DayConfirm">
+      <EntityTypeMapping TypeName="iCEMSDBModel.Exception_DayConfirm">
+        <MappingFragment StoreEntitySet="Exception_DayConfirm">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="timestamps" ColumnName="timestamps" />
+          <ScalarProperty Name="confirmed" ColumnName="confirmed" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Exception_Group">
+      <EntityTypeMapping TypeName="iCEMSDBModel.Exception_Group">
+        <MappingFragment StoreEntitySet="Exception_Group">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="groupname" ColumnName="groupname" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="exceptiondata_group">
+      <EntityTypeMapping TypeName="iCEMSDBModel.exceptiondata_group">
+        <MappingFragment StoreEntitySet="exceptiondata_group">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="envir_id" ColumnName="envir_id" />
+          <ScalarProperty Name="typeid" ColumnName="typeid" />
+          <ScalarProperty Name="typecontent" ColumnName="typecontent" />
+          <ScalarProperty Name="mconfirm" ColumnName="mconfirm" />
+          <ScalarProperty Name="createdate" ColumnName="createdate" />
+          <ScalarProperty Name="updatedate" ColumnName="updatedate" />
+          <ScalarProperty Name="locked" ColumnName="locked" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GroupRuleResult">
+      <EntityTypeMapping TypeName="iCEMSDBModel.GroupRuleResult">
+        <MappingFragment StoreEntitySet="GroupRuleResult">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="pointname" ColumnName="pointname" />
+          <ScalarProperty Name="rulename" ColumnName="rulename" />
+          <ScalarProperty Name="grouptype" ColumnName="grouptype" />
+          <ScalarProperty Name="groupsubtype" ColumnName="groupsubtype" />
+          <ScalarProperty Name="timestamps" ColumnName="timestamps" />
+          <ScalarProperty Name="timestamps2" ColumnName="timestamps2" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="updatetime" ColumnName="updatetime" />
+          <ScalarProperty Name="cemstype" ColumnName="cemstype" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GroupRuleStatus">
+      <EntityTypeMapping TypeName="iCEMSDBModel.GroupRuleStatus">
+        <MappingFragment StoreEntitySet="GroupRuleStatus">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="statusname" ColumnName="statusname" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Indicator_loadpercentage">
+      <EntityTypeMapping TypeName="iCEMSDBModel.Indicator_loadpercentage">
+        <MappingFragment StoreEntitySet="Indicator_loadpercentage">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="indicatorid" ColumnName="indicatorid" />
+          <ScalarProperty Name="loadpercentage" ColumnName="loadpercentage" />
+          <ScalarProperty Name="warninglimit" ColumnName="warninglimit" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LogicRuleAlarmResult">
+      <EntityTypeMapping TypeName="iCEMSDBModel.LogicRuleAlarmResult">
+        <MappingFragment StoreEntitySet="LogicRuleAlarmResult">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="pointname" ColumnName="pointname" />
+          <ScalarProperty Name="rulename" ColumnName="rulename" />
+          <ScalarProperty Name="timestamps" ColumnName="timestamps" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="subtype" ColumnName="subtype" />
+          <ScalarProperty Name="updatetime" ColumnName="updatetime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MachineCemsInfo">
+      <EntityTypeMapping TypeName="iCEMSDBModel.MachineCemsInfo">
+        <MappingFragment StoreEntitySet="MachineCemsInfo">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="machineid" ColumnName="machineid" />
+          <ScalarProperty Name="machinename" ColumnName="machinename" />
+          <ScalarProperty Name="plantid" ColumnName="plantid" />
+          <ScalarProperty Name="globalmachineid" ColumnName="globalmachineid" />
+          <ScalarProperty Name="cemstime" ColumnName="cemstime" />
+          <ScalarProperty Name="importedtime" ColumnName="importedtime" />
+          <ScalarProperty Name="updatetime" ColumnName="updatetime" />
+          <ScalarProperty Name="designedload" ColumnName="designedload" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MachineShiftSecs">
+      <EntityTypeMapping TypeName="iCEMSDBModel.MachineShiftSecs">
+        <MappingFragment StoreEntitySet="MachineShiftSecs">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="machineid" ColumnName="machineid" />
+          <ScalarProperty Name="shiftsecs" ColumnName="shiftsecs" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="moduletypes">
+      <EntityTypeMapping TypeName="iCEMSDBModel.moduletypes">
+        <MappingFragment StoreEntitySet="moduletypes">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="modules" ColumnName="modules" />
+          <ScalarProperty Name="orders" ColumnName="orders" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MonthConfig">
+      <EntityTypeMapping TypeName="iCEMSDBModel.MonthConfig">
+        <MappingFragment StoreEntitySet="MonthConfig">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="monthid" ColumnName="monthid" />
+          <ScalarProperty Name="monthname" ColumnName="monthname" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PIAvgRecords">
+      <EntityTypeMapping TypeName="iCEMSDBModel.PIAvgRecords">
+        <MappingFragment StoreEntitySet="PIAvgRecords">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="pname" ColumnName="pname" />
+          <ScalarProperty Name="pvalue" ColumnName="pvalue" />
+          <ScalarProperty Name="timestamps" ColumnName="timestamps" />
+          <ScalarProperty Name="updatetime" ColumnName="updatetime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PIHourAvgPoints">
+      <EntityTypeMapping TypeName="iCEMSDBModel.PIHourAvgPoints">
+        <MappingFragment StoreEntitySet="PIHourAvgPoints">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="pointname" ColumnName="pointname" />
+          <ScalarProperty Name="shiftsecs" ColumnName="shiftsecs" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Point_Machine_Map">
+      <EntityTypeMapping TypeName="iCEMSDBModel.Point_Machine_Map">
+        <MappingFragment StoreEntitySet="Point_Machine_Map">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="pointname" ColumnName="pointname" />
+          <ScalarProperty Name="machineid" ColumnName="machineid" />
+          <ScalarProperty Name="enabled" ColumnName="enabled" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="minimun_order" ColumnName="minimun_order" />
+          <ScalarProperty Name="startstop" ColumnName="startstop" />
+          <ScalarProperty Name="scr" ColumnName="scr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RelevantPoints">
+      <EntityTypeMapping TypeName="iCEMSDBModel.RelevantPoints">
+        <MappingFragment StoreEntitySet="RelevantPoints">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="pointname" ColumnName="pointname" />
+          <ScalarProperty Name="pointtype" ColumnName="pointtype" />
+          <ScalarProperty Name="plantid" ColumnName="plantid" />
+          <ScalarProperty Name="machineid" ColumnName="machineid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="reportinfo">
+      <EntityTypeMapping TypeName="iCEMSDBModel.reportinfo">
+        <MappingFragment StoreEntitySet="reportinfo">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="reportname" ColumnName="reportname" />
+          <ScalarProperty Name="moduleid" ColumnName="moduleid" />
+          <ScalarProperty Name="typeid" ColumnName="typeid" />
+          <ScalarProperty Name="isshowed" ColumnName="isshowed" />
+          <ScalarProperty Name="isdrillable" ColumnName="isdrillable" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="reportrelations">
+      <EntityTypeMapping TypeName="iCEMSDBModel.reportrelations">
+        <MappingFragment StoreEntitySet="reportrelations">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="sourceid" ColumnName="sourceid" />
+          <ScalarProperty Name="destinationid" ColumnName="destinationid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReportTypes">
+      <EntityTypeMapping TypeName="iCEMSDBModel.ReportTypes">
+        <MappingFragment StoreEntitySet="ReportTypes">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="types" ColumnName="types" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Rule_Machine_Map">
+      <EntityTypeMapping TypeName="iCEMSDBModel.Rule_Machine_Map">
+        <MappingFragment StoreEntitySet="Rule_Machine_Map">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="rulename" ColumnName="rulename" />
+          <ScalarProperty Name="machineid" ColumnName="machineid" />
+          <ScalarProperty Name="enabled" ColumnName="enabled" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StatisticMetaGroup">
+      <EntityTypeMapping TypeName="iCEMSDBModel.StatisticMetaGroup">
+        <MappingFragment StoreEntitySet="StatisticMetaGroup">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="statisticgroup" ColumnName="statisticgroup" />
+          <ScalarProperty Name="seq" ColumnName="seq" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SupervisedIndicator">
+      <EntityTypeMapping TypeName="iCEMSDBModel.SupervisedIndicator">
+        <MappingFragment StoreEntitySet="SupervisedIndicator">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="indicatorid" ColumnName="indicatorid" />
+          <ScalarProperty Name="indicatorname" ColumnName="indicatorname" />
+          <ScalarProperty Name="seq2" ColumnName="seq2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_RulelogS">
+      <EntityTypeMapping TypeName="iCEMSDBModel.t_RulelogS">
+        <MappingFragment StoreEntitySet="t_RulelogS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="RuleName" ColumnName="RuleName" />
+          <ScalarProperty Name="AlarmLog" ColumnName="AlarmLog" />
+          <ScalarProperty Name="TimeLog" ColumnName="TimeLog" />
+          <ScalarProperty Name="ShowType" ColumnName="ShowType" />
+          <ScalarProperty Name="AlarmDis" ColumnName="AlarmDis" />
+          <ScalarProperty Name="Color" ColumnName="Color" />
+          <ScalarProperty Name="TimeLogEnd" ColumnName="TimeLogEnd" />
+          <ScalarProperty Name="FromXLS" ColumnName="FromXLS" />
+          <ScalarProperty Name="EditUser" ColumnName="EditUser" />
+          <ScalarProperty Name="EditTime" ColumnName="EditTime" />
+          <ScalarProperty Name="CEMStype" ColumnName="CEMStype" />
+          <ScalarProperty Name="ValidatedGroup" ColumnName="ValidatedGroup" />
+          <ScalarProperty Name="ConfirmedGroup" ColumnName="ConfirmedGroup" />
+          <ScalarProperty Name="GroupStatus" ColumnName="GroupStatus" />
+          <ScalarProperty Name="ConfirmedUser" ColumnName="ConfirmedUser" />
+          <ScalarProperty Name="ConfirmedTime" ColumnName="ConfirmedTime" />
+          <ScalarProperty Name="ValidatedUser" ColumnName="ValidatedUser" />
+          <ScalarProperty Name="ValidatedTime" ColumnName="ValidatedTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CEMSRuleLogRecords">
+      <EntityTypeMapping TypeName="iCEMSDBModel.CEMSRuleLogRecords">
+        <MappingFragment StoreEntitySet="CEMSRuleLogRecords">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="pname" ColumnName="pname" />
+          <ScalarProperty Name="timestamps" ColumnName="timestamps" />
+          <ScalarProperty Name="rname" ColumnName="rname" />
+          <ScalarProperty Name="ruletype" ColumnName="ruletype" />
+          <ScalarProperty Name="rulediscrip" ColumnName="rulediscrip" />
+          <ScalarProperty Name="updatetime" ColumnName="updatetime" />
+          <ScalarProperty Name="machineid" ColumnName="machineid" />
+          <ScalarProperty Name="plantid" ColumnName="plantid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PlantCemsInfo">
+      <EntityTypeMapping TypeName="iCEMSDBModel.PlantCemsInfo">
+        <MappingFragment StoreEntitySet="PlantCemsInfo">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="plantid" ColumnName="plantid" />
+          <ScalarProperty Name="plantname" ColumnName="plantname" />
+          <ScalarProperty Name="totalmachines" ColumnName="totalmachines" />
+          <ScalarProperty Name="cemsmachines" ColumnName="cemsmachines" />
+          <ScalarProperty Name="importedmachines" ColumnName="importedmachines" />
+          <ScalarProperty Name="updatetime" ColumnName="updatetime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

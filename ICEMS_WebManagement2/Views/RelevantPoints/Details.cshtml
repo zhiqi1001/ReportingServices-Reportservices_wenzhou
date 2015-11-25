@@ -1,0 +1,50 @@
+﻿@model ICEMS_WebManagement2.RelevantPoints
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>RelevantPoints</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.pointname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pointname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pointtype)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pointtype)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.plantid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.plantid)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.machineid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.machineid)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

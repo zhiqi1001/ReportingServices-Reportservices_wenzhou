@@ -1,0 +1,358 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{45D5FD95-B688-41C2-9140-19B3FD5487C4}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ICEMS_WebManagement2</RootNamespace>
+    <AssemblyName>ICEMS_WebManagement2</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.2\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.2\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.2\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.2\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.2\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.2\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="CalibPoints.cs">
+      <DependentUpon>ICEMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CalibRecords.cs">
+      <DependentUpon>ICEMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CalibRuleValue.cs">
+      <DependentUpon>ICEMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CEMSRuleLogRecords.cs">
+      <DependentUpon>ICEMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="chartpointconfig.cs">
+      <DependentUpon>ICEMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="chartpointconfig_fgd_calib.cs">
+      <DependentUpon>ICEMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="chartpointconfig_fgd_launch.cs">
+      <DependentUpon>ICEMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="chartpointconfig_fgd_scon.cs">
+      <DependentUpon>ICEMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="chartpointconfig_scr_calib.cs">
+      <DependentUpon>ICEMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="chartpointconfig_scr_launch.cs">
+      <DependentUpon>ICEMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="chartpointconfig_scr_scon.cs">
+      <DependentUpon>ICEMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\CalibPointsController.cs" />
+    <Compile Include="Controllers\chartpointconfigsController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\MachineCemsInfoesController.cs" />
+    <Compile Include="Controllers\MachineShiftSecsController.cs" />
+    <Compile Include="Controllers\PIHourAvgPointsController.cs" />
+    <Compile Include="Controllers\Point_Machine_MapController.cs" />
+    <Compile Include="Controllers\RelevantPointsController.cs" />
+    <Compile Include="envirexception_rulelog_match.cs">
+      <DependentUpon>ICEMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EnvirIndicator.cs">
+      <DependentUpon>ICEMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EnvirMonitorData.cs">
+      <DependentUpon>ICEMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="exceptiondata_group.cs">
+      <DependentUpon>ICEMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Exception_DayConfirm.cs">
+      <DependentUpon>ICEMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Exception_Group.cs">
+      <DependentUpon>ICEMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="GroupRuleResult.cs">
+      <DependentUpon>ICEMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GroupRuleStatus.cs">
+      <DependentUpon>ICEMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ICEMS.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ICEMS.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ICEMS.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ICEMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ICEMS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ICEMS.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Indicator_loadpercentage.cs">
+      <DependentUpon>ICEMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LogicRuleAlarmResult.cs">
+      <DependentUpon>ICEMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MachineCemsInfo.cs">
+      <DependentUpon>ICEMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MachineShiftSecs.cs">
+      <DependentUpon>ICEMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="moduletypes.cs">
+      <DependentUpon>ICEMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MonthConfig.cs">
+      <DependentUpon>ICEMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PIAvgRecords.cs">
+      <DependentUpon>ICEMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PIHourAvgPoints.cs">
+      <DependentUpon>ICEMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PlantCemsInfo.cs">
+      <DependentUpon>ICEMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Point_Machine_Map.cs">
+      <DependentUpon>ICEMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RelevantPoints.cs">
+      <DependentUpon>ICEMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="reportinfo.cs">
+      <DependentUpon>ICEMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="reportrelations.cs">
+      <DependentUpon>ICEMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReportTypes.cs">
+      <DependentUpon>ICEMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Rule_Machine_Map.cs">
+      <DependentUpon>ICEMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StatisticMetaGroup.cs">
+      <DependentUpon>ICEMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SupervisedIndicator.cs">
+      <DependentUpon>ICEMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_RulelogS.cs">
+      <DependentUpon>ICEMS.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="packages.config" />
+    <EntityDeploy Include="ICEMS.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ICEMS.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="ICEMS.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ICEMS.edmx</DependentUpon>
+      <LastGenOutput>ICEMS.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="ICEMS.edmx.diagram">
+      <DependentUpon>ICEMS.edmx</DependentUpon>
+    </Content>
+    <Content Include="ICEMS.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ICEMS.edmx</DependentUpon>
+      <LastGenOutput>ICEMS.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\MachineCemsInfoes\Create.cshtml" />
+    <Content Include="Views\MachineCemsInfoes\Delete.cshtml" />
+    <Content Include="Views\MachineCemsInfoes\Details.cshtml" />
+    <Content Include="Views\MachineCemsInfoes\Edit.cshtml" />
+    <Content Include="Views\MachineCemsInfoes\Index.cshtml" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Point_Machine_Map\Create.cshtml" />
+    <Content Include="Views\Point_Machine_Map\Delete.cshtml" />
+    <Content Include="Views\Point_Machine_Map\Details.cshtml" />
+    <Content Include="Views\Point_Machine_Map\Edit.cshtml" />
+    <Content Include="Views\Point_Machine_Map\Index.cshtml" />
+    <Content Include="Views\PIHourAvgPoints\Create.cshtml" />
+    <Content Include="Views\PIHourAvgPoints\Delete.cshtml" />
+    <Content Include="Views\PIHourAvgPoints\Details.cshtml" />
+    <Content Include="Views\PIHourAvgPoints\Edit.cshtml" />
+    <Content Include="Views\PIHourAvgPoints\Index.cshtml" />
+    <Content Include="Views\chartpointconfigs\Create.cshtml" />
+    <Content Include="Views\chartpointconfigs\Delete.cshtml" />
+    <Content Include="Views\chartpointconfigs\Details.cshtml" />
+    <Content Include="Views\chartpointconfigs\Edit.cshtml" />
+    <Content Include="Views\chartpointconfigs\Index.cshtml" />
+    <Content Include="Views\MachineShiftSecs\Create.cshtml" />
+    <Content Include="Views\MachineShiftSecs\Delete.cshtml" />
+    <Content Include="Views\MachineShiftSecs\Details.cshtml" />
+    <Content Include="Views\MachineShiftSecs\Edit.cshtml" />
+    <Content Include="Views\MachineShiftSecs\Index.cshtml" />
+    <Content Include="Views\RelevantPoints\Create.cshtml" />
+    <Content Include="Views\RelevantPoints\Delete.cshtml" />
+    <Content Include="Views\RelevantPoints\Details.cshtml" />
+    <Content Include="Views\RelevantPoints\Edit.cshtml" />
+    <Content Include="Views\RelevantPoints\Index.cshtml" />
+    <Content Include="Views\CalibPoints\Create.cshtml" />
+    <Content Include="Views\CalibPoints\Delete.cshtml" />
+    <Content Include="Views\CalibPoints\Details.cshtml" />
+    <Content Include="Views\CalibPoints\Edit.cshtml" />
+    <Content Include="Views\CalibPoints\Index.cshtml" />
+    <Content Include="Views\Login\Login.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>61991</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:61991/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

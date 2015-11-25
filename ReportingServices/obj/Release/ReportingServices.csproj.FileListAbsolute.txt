@@ -1,0 +1,5 @@
+C:\Users\zhefeng\Documents\Projects\ZHIQI\YueQing\ReportingServices\ReportingServices\bin\ReportingServices.dll.config
+C:\Users\zhefeng\Documents\Projects\ZHIQI\YueQing\ReportingServices\ReportingServices\bin\ReportingServices.dll
+C:\Users\zhefeng\Documents\Projects\ZHIQI\YueQing\ReportingServices\ReportingServices\bin\ReportingServices.pdb
+C:\Users\zhefeng\Documents\Projects\ZHIQI\YueQing\ReportingServices\ReportingServices\obj\Release\ReportingServices.dll
+C:\Users\zhefeng\Documents\Projects\ZHIQI\YueQing\ReportingServices\ReportingServices\obj\Release\ReportingServices.pdb

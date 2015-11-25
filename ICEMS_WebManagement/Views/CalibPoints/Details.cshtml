@@ -1,0 +1,42 @@
+﻿@model ICEMS_WebManagement.CalibPoints
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CalibPoints</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.pointname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pointname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.plantid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.plantid)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.machine)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.machine)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,31 @@
+﻿@model ICEMS_WebManagement2.Controllers.Psd
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+</head>
+<body style="text-align:center;background-color:silver">
+    <br /> <br />
+    <div> 
+        <div style="font-family:'Microsoft JhengHei';font-size:xx-large;font-weight:bold">ICEMS Configuration</div>
+        <br /><br /><br /><br /><br /><br /><br /><br />
+        @using(Html.BeginForm("Login","Login",FormMethod.Post))
+        { 
+        <div>Password: &nbsp;&nbsp;&nbsp;@Html.PasswordFor(model=>model.psd)</div>
+            <br /><br />
+        <div><input type="submit" value="Enter"/></div>
+        }
+        <br /><br />
+        <div style="color:red">@ViewBag.Msg</div>
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+        <div>&copy; @DateTime.Now.Year - ZQ TECH</div>
+    </div>
+</body>
+</html>
